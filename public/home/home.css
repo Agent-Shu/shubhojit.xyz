@@ -5,8 +5,8 @@
 :root{
     --text_1: #ffffffcc;
     --text_2: #f8ffd2a8;
-    --text_3: #f8ffd2a8;
-    --text_4: #f8ffd2a8;
+    --text_3: #888888d0;
+    --text_4: #2427fda8;
 }
 
 * {
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: mont;
-    src: url("../font/Montserrat-Thin.ttf");
+    src: url("../font/Montserrat-LightItalic.ttf");
 }
 
 @font-face {
@@ -35,6 +35,20 @@ body {
 }
 
 @media (min-width: 769px) {
+
+    .part_1{
+        position: absolute;
+    }
+
+    .part_2{
+        position: absolute;
+    }
+
+    .home_container{
+        position: absolute;
+        backdrop-filter: blur(10px);;
+    }
+
     .nav_bar {
         position: absolute;
         display: flex;
@@ -52,57 +66,85 @@ body {
         padding: 1vw;
         font-size: 1.5vw;
         font-family: mont;
-        color: rgba(245, 245, 245, 0.897);
+        color: rgba(156, 156, 156, 0.897);
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     
     .nav_bar_text_1:hover {
         cursor: pointer;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+        color: rgba(255, 255, 255, 0.900);
     }
     
     .nav_bar_buttons {
         position: relative;
         display: flex;
-        padding: 1vw;
+        padding: 1.5vw;
         font-size: 1.2vw;
         font-family: mont;
         justify-content: space-between;
         gap: 1.5vw;
-        color: rgba(245, 245, 245, 0.897);
+        color: rgba(156, 156, 156, 0.897);
+    }
+
+    .nav_bar_buttons div{
+        border-bottom: 2px solid transparent; 
+        transition: border-bottom 0.15s ease-in-out;
     }
     
     .home_button {
         padding-inline: 0.5vw;
+        padding-bottom: 0.7vw;
     }
     
     .home_button:hover {
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.900);
+
+        border-bottom: 2px solid rgba(255, 255, 255, 0.822);
         cursor: pointer;
     }
     
     .gallery_button {
         padding-inline: 0.5vw;
+        padding-bottom: 0.7vw;
     }
     
     .gallery_button:hover {
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.900);
+
+        border-bottom: 2px solid rgba(255, 255, 255, 0.822);
         cursor: pointer;
     }
     
     .about_button {
         padding-inline: 0.5vw;
+        padding-bottom: 0.7vw;
     }
     
     .about_button:hover {
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.900);
+
+        border-bottom: 2px solid rgba(255, 255, 255, 0.822);
         cursor: pointer;
     }
 
     .resume_button {
         padding-inline: 0.5vw;
+        padding-bottom: 0.7vw;
     }
     
     .resume_button:hover {
         cursor: pointer;
+        color: rgba(255, 255, 255, 0.900);
+
+        border-bottom: 2px solid rgba(255, 255, 255, 0.822);
+        cursor: pointer;
     }
 
-    .hompage_landing{
+    .landing_container{
         position:absolute;
         height: 100vh;
         width: 100vw;
@@ -111,11 +153,24 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .hompage_landing{
+        position:absolute;
+        height: auto;
+        width: auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        transition: transform 0.1s ease-out;
 
         /* background-color: rgba(68, 68, 68, 0.63); */
     }
 
-    .name_pronunciation{
+    .name_pronunciation_extras{
         display: flex;
         flex-direction: column;
     }
@@ -132,9 +187,66 @@ body {
         color: var(--text_2);
     }
 
+    .what_am_I{
+        padding-top: 1vw;
+        padding-bottom: 0.5vw;
+        font-family: mont;
+        font-size: 1.5vw;
+        color: rgba(255, 255, 255, 0.404);
+    }
+
+    .current_designation_1{
+        font-family: mont1;
+        font-size: 1.2vw;
+        color: var(--text_1);
+    }
+
+    .current_designation_2{
+        font-family: mont1;
+        font-size: 1.2vw;
+        color: var(--text_1);
+    }
+
+    .other_times{
+        padding-top: 1vw;
+        padding-bottom: 0.5vw;
+        font-family: mont;
+        font-size: 1.5vw;
+        color: rgba(255, 255, 255, 0.404);
+    }
+
+    .hobby_1{
+        font-family: mont1;
+        font-size: 1.2vw;
+        color: var(--text_1);
+    }
+
+    .hobby_2{
+        font-family: mont1;
+        font-size: 1.2vw;
+        color: var(--text_1);
+    }
+
 }
 
+
+
+
 @media (max-width: 768px){
+
+    .part_1{
+        position: absolute;
+    }
+
+    .part_2{
+        position: absolute;
+    }
+
+    .home_container{
+        position: absolute;
+        backdrop-filter: blur(10px);;
+    }
+    
     .nav_bar {
         position: absolute;
         display: flex;
@@ -150,9 +262,9 @@ body {
     
     .nav_bar_text_1 {
         padding: 1vw;
-        font-size: 1.5vw;
+        font-size: 3vw;
         font-family: mont;
-        color: rgba(245, 245, 245, 0.897);
+        color: rgba(156, 156, 156, 0.897);
     }
     
     .nav_bar_text_1:hover {
@@ -163,7 +275,7 @@ body {
         position: relative;
         display: flex;
         padding: 1vw;
-        font-size: 1.2vw;
+        font-size: 2.5vw;
         font-family: mont;
         justify-content: space-between;
         gap: 1.5vw;
@@ -202,7 +314,7 @@ body {
         cursor: pointer;
     }
 
-    .hompage_landing{
+    .landing_container{
         position:absolute;
         height: 100vh;
         width: 100vw;
@@ -211,27 +323,79 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .hompage_landing{
+        position:absolute;
+        height: auto;
+        width: auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        transition: transform 0.1s ease-out;
 
         /* background-color: rgba(68, 68, 68, 0.63); */
     }
 
-    .name_pronunciation{
+    .name_pronunciation_extras{
         display: flex;
         flex-direction: column;
     }
 
     .my_name{
         font-family: mont1;
-        font-size: 100px;
+        font-size: 9vw;
         color: var(--text_1);
     }
 
     .pronunciation{
         font-family: mont;
-        font-size: 20px;
+        font-size: 3vw;
         color: var(--text_2);
     }
 
+    .what_am_I{
+        padding-top: 1vw;
+        padding-bottom: 0.5vw;
+        font-family: mont;
+        font-size: 1.5vw;
+        color: rgba(255, 255, 255, 0.404);
+    }
+
+    .current_designation_1{
+        font-family: mont1;
+        font-size: 1.2vw;
+        color: var(--text_1);
+    }
+
+    .current_designation_2{
+        font-family: mont1;
+        font-size: 1.2vw;
+        color: var(--text_1);
+    }
+
+    .other_times{
+        padding-top: 1vw;
+        padding-bottom: 0.5vw;
+        font-family: mont;
+        font-size: 1.5vw;
+        color: rgba(255, 255, 255, 0.404);
+    }
+
+    .hobby_1{
+        font-family: mont1;
+        font-size: 1.2vw;
+        color: var(--text_1);
+    }
+
+    .hobby_2{
+        font-family: mont1;
+        font-size: 1.2vw;
+        color: var(--text_1);
+    }
 
 }
 
