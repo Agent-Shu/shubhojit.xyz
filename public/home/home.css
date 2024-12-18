@@ -36,17 +36,37 @@ body {
 
 @media (min-width: 769px) {
 
-    .part_1{
-        position: absolute;
+    .responsive_pattern{
+        position: fixed;
+        filter: blur(45px);
+        z-index: -1;
     }
 
-    .part_2{
+    .pic_1{
         position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-size: cover; 
+        background-position: center;
+        transition: filter 0.1s linear;
+        transition: transform 0.5s ease-out;
+    }
+
+    .pic_2{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-size: cover; 
+        background-position: center;
+        transition: filter 0.1s linear;
+        transition: transform 0.5s ease-out;
     }
 
     .home_container{
         position: absolute;
-        backdrop-filter: blur(10px);;
+        width: 100vw;
+        height: auto;
+        z-index: 0;
     }
 
     .nav_bar {
@@ -57,13 +77,13 @@ body {
         width: 100vw;
         height: auto;
         justify-content: space-between;
-        /* backdrop-filter: blur(10px); */
         background: rgba(187, 187, 187, 0);
         z-index: 100;
     }
     
     .nav_bar_text_1 {
-        padding: 1vw;
+        padding: 1.5vw;
+        padding-left: 8vw;
         font-size: 1.5vw;
         font-family: mont;
         color: rgba(156, 156, 156, 0.897);
@@ -80,6 +100,7 @@ body {
         position: relative;
         display: flex;
         padding: 1.5vw;
+        padding-right: 3vw;
         font-size: 1.2vw;
         font-family: mont;
         justify-content: space-between;
@@ -232,19 +253,47 @@ body {
 
 
 
+
+
+
+
+
 @media (max-width: 768px){
 
-    .part_1{
-        position: absolute;
+    .responsive_pattern{
+        position: fixed;
+        width: 100vw;
+        height: auto;
+        object-fit: contain;
+        filter: blur(45px);
+        z-index: -1;
     }
 
-    .part_2{
+    .pic_1{
         position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-size: cover; 
+        background-position: center;
+        transition: filter 0.1s linear;
+        transition: transform 0.5s ease-out;
+    }
+
+    .pic_2{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-size: cover; 
+        background-position: center;
+        transition: filter 0.1s linear;
+        transition: transform 0.5s ease-out;
     }
 
     .home_container{
         position: absolute;
-        backdrop-filter: blur(10px);;
+        width: 100vw;
+        height: auto;
+        z-index: 0;
     }
     
     .nav_bar {
@@ -255,13 +304,13 @@ body {
         width: 100vw;
         height: auto;
         justify-content: space-between;
-        /* backdrop-filter: blur(10px); */
         background: rgba(187, 187, 187, 0);
         z-index: 100;
     }
     
     .nav_bar_text_1 {
         padding: 1vw;
+        padding-left: 3vw;
         font-size: 3vw;
         font-family: mont;
         color: rgba(156, 156, 156, 0.897);
@@ -275,11 +324,12 @@ body {
         position: relative;
         display: flex;
         padding: 1vw;
+        padding-right: 3vw;
         font-size: 2.5vw;
         font-family: mont;
         justify-content: space-between;
         gap: 1.5vw;
-        color: rgba(245, 245, 245, 0.897);
+        color: rgba(245, 245, 245, 0.644);
     }
     
     .home_button {
@@ -347,13 +397,13 @@ body {
 
     .my_name{
         font-family: mont1;
-        font-size: 9vw;
+        font-size: 12vw;
         color: var(--text_1);
     }
 
     .pronunciation{
         font-family: mont;
-        font-size: 3vw;
+        font-size: 5vw;
         color: var(--text_2);
     }
 
@@ -361,19 +411,19 @@ body {
         padding-top: 1vw;
         padding-bottom: 0.5vw;
         font-family: mont;
-        font-size: 1.5vw;
+        font-size: 2.5vw;
         color: rgba(255, 255, 255, 0.404);
     }
 
     .current_designation_1{
         font-family: mont1;
-        font-size: 1.2vw;
+        font-size: 3vw;
         color: var(--text_1);
     }
 
     .current_designation_2{
         font-family: mont1;
-        font-size: 1.2vw;
+        font-size: 3vw;
         color: var(--text_1);
     }
 
@@ -381,19 +431,19 @@ body {
         padding-top: 1vw;
         padding-bottom: 0.5vw;
         font-family: mont;
-        font-size: 1.5vw;
+        font-size: 2.5vw;
         color: rgba(255, 255, 255, 0.404);
     }
 
     .hobby_1{
         font-family: mont1;
-        font-size: 1.2vw;
+        font-size: 3vw;
         color: var(--text_1);
     }
 
     .hobby_2{
         font-family: mont1;
-        font-size: 1.2vw;
+        font-size: 3vw;
         color: var(--text_1);
     }
 
