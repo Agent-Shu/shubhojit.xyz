@@ -49,6 +49,23 @@ document.addEventListener("DOMContentLoaded", () => {
         pic_2.style.transform = `skew(${skewX}deg, ${skewY}deg)`;
     });
 
+    function updateDivPosition() {
+        const absoluteDiv = document.getElementsByClassName('home_container')[0];
+        if (!absoluteDiv) return;
+        const scrollPosition = window.scrollY;
+        const vhPosition = (scrollPosition / window.innerHeight) * 100;
+        absoluteDiv.style.top = `${vhPosition}px`;
+    }
+    window.addEventListener('scroll', updateDivPosition);
+
+    function scroll_down() {
+        window.scrollBy({
+            top: 600,      
+            behavior: 'smooth' 
+        });
+    }
+    document.getElementsByClassName('down_button')[0].addEventListener('click', scroll_down);
+
 
 
 
