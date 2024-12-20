@@ -15,14 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const pic1 = document.querySelector('.pic_1');
     document.addEventListener('mousemove', (event) => {
         const screenWidth = window.innerWidth;
-        const hue = (event.clientX / screenWidth) * 360;
+        const minHue = -90;   
+        const maxHue = 90; 
+        const hue = minHue + ((event.clientX / screenWidth) * (maxHue - minHue));
         pic1.style.filter = `hue-rotate(${hue}deg)`;
     });
 
     const pic2 = document.querySelector('.pic_2');
     document.addEventListener('mousemove', (event) => {
         const screenWidth = window.innerWidth;
-        const hue = (event.clientX / screenWidth) * 360;
+        const minHue = -90;   
+        const maxHue = 90; 
+        const hue = minHue + ((event.clientX / screenWidth) * (maxHue - minHue));
         pic2.style.filter = `hue-rotate(${hue+20}deg)`;
     });
 
@@ -67,7 +71,28 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementsByClassName('down_button')[0].addEventListener('click', scroll_down);
 
 
+    const image = document.querySelector('.project_img');
+    image.addEventListener('mousemove', function (e) {
+        const { left, top, width, height } = image.getBoundingClientRect();
+        const mouseX = e.clientX - left;
+        const mouseY = e.clientY - top; 
+        const rotX = (mouseX / width - 0.5) * 10; 
+        const rotY = (mouseY / height - 0.5) * 10; 
+        image.style.transform = `perspective(1500px) rotateX(${rotY}deg) rotateY(${-rotX}deg)`;
+    });
 
+    image.addEventListener('mouseleave', function () {
+        image.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    });
+
+    function sendMail() {
+        const email = "example@example.com"; // Replace with the email address
+        const subject = encodeURIComponent("Hello!");
+        const body = encodeURIComponent("I would like to get in touch.");
+        const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+    
+        window.location.href = mailtoLink;
+    }
 
 });
 

@@ -25,18 +25,24 @@
 }
 
 @font-face {
-    font-family: mont1;
+    font-family: mont-light;
     src: url("../font/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: sequel;
+    src: url("../font/Sequel_Demo.ttf");
 }
 
 a {
     color: rgb(158, 158, 158);
     text-decoration: none;
     transition: color 0.15s ease-in-out;
+    cursor: url('../images/home/icons/dot.png'), auto;
 }
 
 a:hover {
-    color: rgb(253, 253, 253);
+    color: rgb(253, 253, 253); 
 }
 
 body {
@@ -48,6 +54,9 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     user-select: none;
+    display: flex;
+    flex-direction: column;
+    cursor: url('../images/home/icons/dot.png'), auto;
 }
 
 @media (min-width: 769px) {
@@ -87,35 +96,39 @@ body {
         height: auto;
         justify-content: space-between;
         background: rgba(187, 187, 187, 0);
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(10px);
         z-index: 100;
+        transition: background 0.15s ease-in-out;
+    }
+
+    .nav_bar:hover {
+        background: rgba(0, 0, 0, 0.295);
     }
     
     .nav_bar_text_1 {
-        padding: 1.5vw;
-        margin-left: 7vw;
-        font-size: 1.5vw;
+        padding-top: 1vw;
+        margin-left: 20vw;
+        font-size: 0.9vw;
         font-family: nav_font;
-        color: rgba(156, 156, 156, 0.897);
+        color: rgba(202, 202, 202, 0.808);
         transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     
     .nav_bar_text_1:hover {
-        cursor: pointer;
         transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-        color: rgba(255, 255, 255, 0.900);
+        color: rgba(255, 255, 255, 0.979);
     }
     
     .nav_bar_buttons {
         position: relative;
         display: flex;
-        padding: 1.5vw;
-        padding-right: 3vw;
-        font-size: 1.2vw;
+        padding-top: 1vw;
+        padding-right: 20vw;
+        font-size: 0.9vw;
         font-family: nav_font;
         justify-content: space-between;
         gap: 1.5vw;
-        color: rgba(156, 156, 156, 0.897);
+        color: rgba(202, 202, 202, 0.808);
     }
 
     .nav_bar_buttons div{
@@ -129,10 +142,8 @@ body {
     }
     
     .home_button:hover {
-        cursor: pointer;
-        color: rgba(255, 255, 255, 0.900);
+        color: rgb(255, 255, 255);
         border-bottom: 2px solid rgba(255, 255, 255, 0.822);
-        cursor: pointer;
     }
     
     .gallery_button {
@@ -141,10 +152,8 @@ body {
     }
     
     .gallery_button:hover {
-        cursor: pointer;
-        color: rgba(255, 255, 255, 0.900);
+        color: rgb(255, 255, 255);
         border-bottom: 2px solid rgba(255, 255, 255, 0.822);
-        cursor: pointer;
     }
     
     .about_button {
@@ -153,10 +162,8 @@ body {
     }
     
     .about_button:hover {
-        cursor: pointer;
-        color: rgba(255, 255, 255, 0.900);
+        color: rgb(255, 255, 255);
         border-bottom: 2px solid rgba(255, 255, 255, 0.822);
-        cursor: pointer;
     }
 
     .resume_button {
@@ -165,14 +172,12 @@ body {
     }
     
     .resume_button:hover {
-        cursor: pointer;
-        color: rgba(255, 255, 255, 0.900);
+        color: rgb(255, 255, 255);
         border-bottom: 2px solid rgba(255, 255, 255, 0.822);
-        cursor: pointer;
     }
 
     .home_container{
-        position: absolute;
+        position: relative;
         width: 100vw;
         height: auto;
         z-index: 0;
@@ -205,7 +210,7 @@ body {
     }
 
     .my_name{
-        font-family: mont1;
+        font-family: mont-light;
         font-size: 5vw;
         color: var(--text_1);
     }
@@ -225,13 +230,13 @@ body {
     }
 
     .current_designation_1{
-        font-family: mont1;
+        font-family: mont-light;
         font-size: 1.2vw;
         color: var(--text_1);
     }
 
     .current_designation_2{
-        font-family: mont1;
+        font-family: mont-light;
         font-size: 1.2vw;
         color: var(--text_1);
     }
@@ -245,30 +250,31 @@ body {
     }
 
     .hobby_1{
-        font-family: mont1;
+        font-family: mont-light;
         font-size: 1.2vw;
         color: var(--text_1);
     }
 
     .hobby_2{
-        font-family: mont1;
+        font-family: mont-light;
         font-size: 1.2vw;
         color: var(--text_1);
     }
 
     .down_button{
         margin-top: auto;
-        margin-bottom: 0.5vh;
+        margin-bottom: 0.6vh;
         width: 4vw;
         height: auto;
         filter: invert(1) opacity(0.5);
         transition: filter 0.25s ease-in-out;
+        transition: margin-bottom 0.2s ease-in-out;
     }
 
     .down_button:hover{
-        cursor: pointer;
+        margin-bottom: 0vh;
         filter: invert(1) opacity(0.75);
-    }
+    }   
 
     .projects_showcase{
         position: relative;
@@ -285,6 +291,8 @@ body {
         position: relative;
         width: 70vw;
         height: auto;
+        perspective: 1000px;
+        transition: all 0.1s linear;
     }
 
     .project{
@@ -307,14 +315,14 @@ body {
 
     .project_heading{
         padding-top: 2vh;
-        font-family: mont;
+        font-family: sequel;
         font-size: 1.5vw;
         color: antiquewhite;
     }
 
     .project_gist {
         padding-top: 2vh;
-        font-family: mont1, Arial, sans-serif;
+        font-family: mont-light, Arial, sans-serif;
         font-size: 1vw;
         color: rgb(255, 255, 255);
         line-height: 1.6;
@@ -323,6 +331,50 @@ body {
 
 
 
+
+
+
+
+    footer {
+        position: relative;
+        bottom: 0vh;
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #70707000;
+        backdrop-filter: blur(5px);
+    }
+
+    .shortcut_ico{
+        position: relative;
+        display: flex;
+        margin-top: 2vh;
+        margin-bottom: 1vh;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon{
+        margin-inline: 1vw;
+        width: 2.7vw;
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.952);
+        border-radius: 12px;
+        border: 2px solid white;
+        box-sizing: border-box; 
+    }
+
+    .ending_words{
+        padding: 1vh;
+        font-family: mont-light, Arial, sans-serif;
+        font-size: 1vw;
+        color: rgb(255, 255, 255);
+        line-height: 1.6;
+    }
 
 }
 
@@ -335,7 +387,6 @@ body {
 
 
 @media (max-width: 768px){
-
     .responsive_pattern{
         position: fixed;
         width: 100vw;
@@ -374,7 +425,13 @@ body {
         height: auto;
         justify-content: space-between;
         background: rgba(187, 187, 187, 0);
+        backdrop-filter: blur(10px);
         z-index: 100;
+        transition: background 0.15s ease-in-out;
+    }
+
+    .nav_bar:hover {
+        background: rgba(0, 0, 0, 0.295);
     }
     
     .nav_bar_text_1 {
@@ -384,11 +441,7 @@ body {
         font-family: mont;
         color: rgba(156, 156, 156, 0.897);
     }
-    
-    .nav_bar_text_1:hover {
-        cursor: pointer;
-    }
-    
+
     .nav_bar_buttons {
         position: relative;
         display: flex;
@@ -405,36 +458,16 @@ body {
         padding-inline: 0.5vw;
     }
     
-    .home_button:hover {
-        cursor: pointer;
-    }
-    
     .gallery_button {
         padding-inline: 0.5vw;
-    }
-    
-    .gallery_button:hover {
-        cursor: pointer;
     }
     
     .about_button {
         padding-inline: 0.5vw;
     }
-    
-    .about_button:hover {
-        cursor: pointer;
-    }
-
-    .resume_button {
-        padding-inline: 0.5vw;
-    }
-    
-    .resume_button:hover {
-        cursor: pointer;
-    }
 
     .home_container{
-        position: absolute;
+        position: relative;
         width: 100vw;
         height: auto;
         z-index: 0;
@@ -444,7 +477,6 @@ body {
         position: relative;
         height: 100vh;
         width: 100vw;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -455,15 +487,11 @@ body {
         position:absolute;
         height: auto;
         width: auto;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
         transition: transform 0.1s ease-out;
-
-        /* background-color: rgba(68, 68, 68, 0.63); */
     }
 
     .name_pronunciation_extras{
@@ -472,7 +500,7 @@ body {
     }
 
     .my_name{
-        font-family: mont1;
+        font-family: mont-light;
         font-size: 12vw;
         color: var(--text_1);
     }
@@ -492,13 +520,13 @@ body {
     }
 
     .current_designation_1{
-        font-family: mont1;
+        font-family: mont-light;
         font-size: 3vw;
         color: var(--text_1);
     }
 
     .current_designation_2{
-        font-family: mont1;
+        font-family: mont-light;
         font-size: 3vw;
         color: var(--text_1);
     }
@@ -512,13 +540,13 @@ body {
     }
 
     .hobby_1{
-        font-family: mont1;
+        font-family: mont-light;
         font-size: 3vw;
         color: var(--text_1);
     }
 
     .hobby_2{
-        font-family: mont1;
+        font-family: mont-light;
         font-size: 3vw;
         color: var(--text_1);
     }
@@ -532,7 +560,6 @@ body {
     }
 
     .down_button:hover{
-        cursor: pointer;
         filter: invert(1) opacity(0.75);
     }
 
@@ -540,7 +567,6 @@ body {
         position: relative;
         width: 100vw;
         height: auto;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -551,6 +577,8 @@ body {
         position: relative;
         width: 80vw;
         height: auto;
+        perspective: 1000px;
+        transition: all 0.1s linear;
     }
 
     .project{
@@ -571,19 +599,63 @@ body {
 
     .project_heading{
         padding-top: 1.5vh;
-        font-family: mont;
+        font-family: sequel;
         font-size: 3vw;
         color: antiquewhite;
     }
 
     .project_gist {
         padding-top: 1vh;
-        font-family: mont1, Arial, sans-serif;
+        font-family: mont-light, Arial, sans-serif;
         font-size: 2vw;
         color: rgb(255, 255, 255);
         line-height: 2;
         background-color: #00000000;
     }
+
+
+
+
+
+    footer {
+        position: relative;
+        bottom: 0vh;
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #70707000;
+        backdrop-filter: blur(5px);
+    }
+
+    .shortcut_ico{
+        position: relative;
+        display: flex;
+        margin-top: 1vh;
+        margin-bottom: 0.1vh;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon{
+        margin-inline: 2vw;
+        width: 7vw;
+        height: auto;
+        background-color: white;
+        border-radius: 11px;
+    }
+
+    .ending_words{
+        padding: 1vh;
+        font-family: mont-light, Arial, sans-serif;
+        font-size: 2.7vw;
+        color: rgb(255, 255, 255);
+        line-height: 1.6;
+    }
+
 
 }
 
