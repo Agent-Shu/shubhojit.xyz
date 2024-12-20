@@ -52,7 +52,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     user-select: none;
     display: flex;
     flex-direction: column;
@@ -60,6 +60,7 @@ body {
 
     scroll-behavior: smooth; /* FOR IOS */
     -webkit-overflow-scrolling: touch; /* FOR IOS */
+    overscroll-behavior: auto;
 }
 
 @media (min-width: 769px) {
