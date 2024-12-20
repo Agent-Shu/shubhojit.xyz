@@ -57,6 +57,9 @@ body {
     display: flex;
     flex-direction: column;
     cursor: url('../images/home/icons/dot.png'), auto;
+
+    scroll-behavior: smooth; /* FOR IOS */
+    -webkit-overflow-scrolling: touch; /* FOR IOS */
 }
 
 @media (min-width: 769px) {
