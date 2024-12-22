@@ -85,14 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
         image.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
     });
 
-    function sendMail() {
-        const email = "example@example.com"; // Replace with the email address
-        const subject = encodeURIComponent("Hello!");
-        const body = encodeURIComponent("I would like to get in touch.");
-        const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+
     
-        window.location.href = mailtoLink;
-    }
 
 });
 
