@@ -23,6 +23,11 @@ app.get("/", async (req, res) => {
     res.sendFile(path.join(__dirname, "/../public/home/home.html"));
 });
 
+app.get("/about", async (req, res) => {
+  res.sendFile(path.join(__dirname, "/../public/about/about.html"));
+});
+
+
 
 
 
